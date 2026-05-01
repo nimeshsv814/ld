@@ -13,14 +13,4 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
-  - name: https
-    port: 443
-    protocol: HTTPS
-    tls:
-      mode: Terminate
-      certificateRefs:
-      - name: api-cert
-    allowedRoutes:
-      namespaces:
-        from: All
 {{- end }}
