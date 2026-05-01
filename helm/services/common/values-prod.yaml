@@ -1,0 +1,22 @@
+namespace: prod
+gateway:
+  enabled: true
+  name: api-gateway
+  namespace: prod
+httproute:
+  enabled: true
+  name: api-routes
+  namespace: prod
+  hostname: api-prod.example.com
+storageClass:
+  enabled: true
+  name: mongodb-storage-prod
+  storageSize: 50Gi
+mongodb:
+  enabled: true
+  name: mongodb
+  namespace: prod
+  replicas: 3
+  storageSize: 50Gi
+  user: admin
+  password: password_123

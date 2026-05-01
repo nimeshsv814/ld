@@ -1,0 +1,56 @@
+{{- if .Values.httproute.enabled }}
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: {{ .Values.httproute.name }}
+  namespace: {{ .Values.httproute.namespace }}
+spec:
+  parentRefs:
+  - name: {{ .Values.gateway.name }}
+    namespace: {{ .Values.gateway.namespace }}
+  hostnames:
+  - {{ .Values.httproute.hostname }}
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /api
+    backendRefs:
+    - name: api-gateway
+      port: 3000
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /auth
+    backendRefs:
+    - name: auth-service
+      port: 3001
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /users
+    backendRefs:
+    - name: user-service
+      port: 3002
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /training
+    backendRefs:
+    - name: training-service
+      port: 3003
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /attendance
+    backendRefs:
+    - name: attendance-service
+      port: 3004
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /notifications
+    backendRefs:
+    - name: notification-service
+      port: 3005
+{{- end }}

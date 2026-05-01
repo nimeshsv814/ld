@@ -1,0 +1,22 @@
+namespace: dev
+gateway:
+  enabled: true
+  name: api-gateway
+  namespace: dev
+httproute:
+  enabled: true
+  name: api-routes
+  namespace: dev
+  hostname: api-dev.example.com
+storageClass:
+  enabled: true
+  name: mongodb-storage-dev
+  storageSize: 10Gi
+mongodb:
+  enabled: true
+  name: mongodb
+  namespace: dev
+  replicas: 1
+  storageSize: 10Gi
+  user: admin
+  password: password_123

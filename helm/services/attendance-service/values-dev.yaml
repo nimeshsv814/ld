@@ -1,0 +1,4 @@
+image: ""
+replicas: 1
+port: 3004
+namespace: dev

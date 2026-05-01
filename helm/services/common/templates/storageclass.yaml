@@ -1,0 +1,14 @@
+{{- if .Values.storageClass.enabled }}
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: {{ .Values.storageClass.name }}
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp2
+  iops: "100"
+  fstype: ext4
+allowVolumeExpansion: true
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+{{- end }}

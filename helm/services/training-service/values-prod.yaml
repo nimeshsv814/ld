@@ -1,0 +1,4 @@
+image: ""
+replicas: 3
+port: 3003
+namespace: prod

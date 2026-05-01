@@ -1,0 +1,25 @@
+{{- if .Values.mongodb.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.mongodb.name }}
+  namespace: {{ .Values.mongodb.namespace }}
+spec:
+  clusterIP: None
+  selector:
+    app: {{ .Values.mongodb.name }}
+  ports:
+  - port: 27017
+    targetPort: 27017
+    name: mongodb
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mongodb-secret
+  namespace: {{ .Values.mongodb.namespace }}
+type: Opaque
+stringData:
+  username: {{ .Values.mongodb.user }}
+  password: {{ .Values.mongodb.password }}
+{{- end }}
