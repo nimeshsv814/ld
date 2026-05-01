@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-org/your-repo
+    repoURL: https://github.com/nimeshsv814/ld
     targetRevision: main
     path: helm/services/api-gateway
     helm:
