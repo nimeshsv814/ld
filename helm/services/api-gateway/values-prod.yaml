@@ -1,4 +1,4 @@
-image: ""
-replicas: 3
+image: nimeshsv814/ld-api-gateway:v1.0.0
+replicas: 1
 port: 3000
 namespace: prod

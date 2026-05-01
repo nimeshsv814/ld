@@ -16,7 +16,7 @@ mongodb:
   enabled: true
   name: mongodb
   namespace: prod
-  replicas: 3
+  replicas: 1
   storageSize: 50Gi
   user: admin
   password: password_123
