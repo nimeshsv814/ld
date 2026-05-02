@@ -32,9 +32,10 @@ app.use('/api', (req, res, next) => {
 const proxyOptions = (target, pathPrefix) => ({
     target,
     changeOrigin: true,
-    pathRewrite: (path, req) => {
-        return path.replace('/api', '') || '/';
-    },
+    pathRewrite: { [`^${pathPrefix}`]: '' },
+    // pathRewrite: (path, req) => {
+    //     return path.replace('/api', '') || '/';
+    // },
     on: {
         proxyReq: (proxyReq, req, res) => {
             console.log(`[PROXY] Forwarding to ${req.url}. User:`, req.user ? req.user.role : 'None');
