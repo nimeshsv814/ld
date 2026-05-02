@@ -1,11 +1,11 @@
 namespace: prod
 gateway:
   enabled: true
-  name: api-gateway
+  name: kgateway
   namespace: prod
 httproute:
   enabled: true
-  name: api-routes
+  name: kgateway-routes
   namespace: prod
 storageClass:
   enabled: true

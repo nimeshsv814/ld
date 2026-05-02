@@ -1,11 +1,11 @@
 namespace: dev
 gateway:
   enabled: true
-  name: api-gateway
+  name: kgateway
   namespace: dev
 httproute:
   enabled: true
-  name: api-routes
+  name: kgateway-routes
   namespace: dev
 storageClass:
   enabled: true

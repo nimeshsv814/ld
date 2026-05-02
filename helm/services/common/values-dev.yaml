@@ -1,17 +1,16 @@
 namespace: dev
 gateway:
   enabled: true
-  name: api-gateway
+  name: kgateway
   namespace: dev
 httproute:
   enabled: true
-  name: api-routes
+  name: kgateway-routes
   namespace: dev
 storageClass:
   enabled: true
-database:
-  storageClassName: mongodb-storage-dev
-  nfs:
+  name: mongodb-storage-dev        # ← moved here
+  nfs:                             # ← moved here
     server: 10.0.8.33
     path: /var/nfs/general/lnd-test
 mongodb:

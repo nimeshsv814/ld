@@ -2,9 +2,8 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: {{ .Values.database.storageClassName }}
+  name: {{ .Values.storageClass.name }}
 provisioner: nfs.csi.k8s.io
 parameters:
-  server: {{ .Values.database.nfs.server }}
-  share: {{ .Values.database.nfs.path }}
-{{- end }}
+  server: {{ .Values.storageClass.nfs.server }}
+  share: {{ .Values.storageClass.nfs.path }}
