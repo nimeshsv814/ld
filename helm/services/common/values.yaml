@@ -1,24 +1,25 @@
-namespace: prod
+namespace: dev
 gateway:
   enabled: true
   name: api-gateway
-  namespace: prod
+  namespace: dev
 httproute:
   enabled: true
   name: api-routes
-  namespace: prod
+  namespace: dev
 storageClass:
   enabled: true
 database:
-  storageClassName: mongodb-storage-prod
+  storageClassName: mongodb-storage-dev
   nfs:
     server: 10.0.8.33
     path: /var/nfs/general/lnd-test
 mongodb:
   enabled: true
   name: mongodb
-  namespace: prod
+  namespace: dev
   replicas: 1
-  storageSize: 50Gi
+  storageSize: 10Gi
   user: admin
   password: password_123
+# Default dev/test values for common infrastructure

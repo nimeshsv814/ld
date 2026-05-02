@@ -1,0 +1,5 @@
+image: nimeshsv814/ld-training-service:v1.0.0
+replicas: 1
+port: 3003
+namespace: dev
+# Default dev/test values for training-service

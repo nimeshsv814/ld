@@ -1,0 +1,5 @@
+image: nimeshsv814/ld-user-service:v1.0.0
+replicas: 1
+port: 3002
+namespace: dev
+# Default dev/test values for user-service

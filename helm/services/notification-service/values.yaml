@@ -1,0 +1,5 @@
+image: nimeshsv814/ld-notification-service:v1.0.0
+replicas: 1
+port: 3005
+namespace: dev
+# Default dev/test values for notification-service
