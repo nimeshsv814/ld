@@ -43,7 +43,7 @@ export default function Layout({ children }) {
     useEffect(() => {
         if (!user) return;
         
-        const socket = io('http://localhost:3005');
+        const socket = io('/', { path: '/notifications/socket.io' });
         
         socket.on('connect', () => {
             console.log('Connected to notification service');

@@ -16,7 +16,7 @@ export default function LivePollingPage() {
 
     useEffect(() => {
         if (!user) return;
-        const s = io('http://localhost:3005');
+        const s = io('/', { path: '/notifications/socket.io' });
         setSocket(s);
 
         s.on('connect', () => s.emit('register', user.id));
