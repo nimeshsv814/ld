@@ -9,8 +9,9 @@ httproute:
   namespace: prod
 storageClass:
   enabled: true
-  name: mongodb-storage-dev        # ← moved here
-  nfs:                             # ← moved here
+database:
+  storageClassName: mongodb-storage-prod
+  nfs:
     server: 10.0.8.33
     path: /var/nfs/general/lnd-test
 mongodb:
