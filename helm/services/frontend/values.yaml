@@ -1,5 +1,5 @@
 image: nimeshsv814/ld-frontend:v1.0.1
 replicas: 1
-port: 5173
+port: 80
 namespace: dev
 # Default dev/test values for frontend
