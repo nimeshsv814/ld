@@ -11,7 +11,8 @@ spec:
     path: helm/services/api-gateway
     helm:
       releaseName: api-gateway
-      values: values-dev.yaml
+      valueFiles:
+      - values-dev.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
