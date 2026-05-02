@@ -63,7 +63,7 @@ spec:
       name: mongodb-storage
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: {{ .Values.storageClass.name }}
+      storageClassName: {{ .Values.database.storageClassName }}
       resources:
         requests:
           storage: {{ .Values.mongodb.storageSize }}
