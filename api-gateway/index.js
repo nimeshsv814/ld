@@ -33,7 +33,7 @@ const proxyOptions = (target, pathPrefix) => ({
     target,
     changeOrigin: true,
     pathRewrite: (path, req) => {
-        return path.replace(pathPrefix, '') || '/';
+        return path.replace('/api', '') || '/';
     },
     on: {
         proxyReq: (proxyReq, req, res) => {
