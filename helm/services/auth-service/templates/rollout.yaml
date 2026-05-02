@@ -23,3 +23,8 @@ spec:
         image: {{ .Values.image }}
         ports:
         - containerPort: {{ .Values.port }}
+        envFrom:                          # ← ADD THIS
+        - configMapRef:
+            name: {{ .Chart.Name }}-config
+        - secretRef:
+            name: {{ .Chart.Name }}-secret
