@@ -51,4 +51,11 @@ spec:
     backendRefs:
     - name: notification-service
       port: 3005
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: frontend
+      port: 5173
 {{- end }}
