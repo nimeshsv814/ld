@@ -7,13 +7,10 @@
 # CMD ["npm", "run", "dev", "--", "--host"]
 
 # Build stage
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-
-# ← KEY FIX: remove lock file and reinstall fresh
 RUN rm -f package-lock.json && npm install
-
 COPY . .
 RUN npm run build
 
