@@ -10,7 +10,10 @@
 FROM node:18-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+
+# ← KEY FIX: remove lock file and reinstall fresh
+RUN rm -f package-lock.json && npm install
+
 COPY . .
 RUN npm run build
 
