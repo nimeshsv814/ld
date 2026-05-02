@@ -1,4 +1,4 @@
-image: nimeshsv814/ld-frontend:v1.0.1
+image: nimeshsv814/ld-frontend:v1.0.2
 replicas: 1
 port: 80
 namespace: prod
