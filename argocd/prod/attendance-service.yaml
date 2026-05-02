@@ -11,7 +11,8 @@ spec:
     path: helm/services/attendance-service
     helm:
       releaseName: attendance-service
-      values: values-prod.yaml
+      valueFiles:
+      - values-prod.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: prod

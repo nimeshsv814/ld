@@ -11,7 +11,8 @@ spec:
     path: helm/services/notification-service
     helm:
       releaseName: notification-service
-      values: values-dev.yaml
+      valueFiles:
+      - values-dev.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
