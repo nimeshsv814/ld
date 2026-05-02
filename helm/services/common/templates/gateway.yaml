@@ -5,7 +5,7 @@ metadata:
   name: {{ .Values.gateway.name }}
   namespace: {{ .Values.gateway.namespace }}
 spec:
-  gatewayClassName: nginx
+  gatewayClassName: kgateway
   listeners:
   - name: http
     port: 80
