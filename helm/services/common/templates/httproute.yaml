@@ -57,5 +57,5 @@ spec:
         value: /
     backendRefs:
     - name: frontend
-      port: 5173
+      port: 80
 {{- end }}
